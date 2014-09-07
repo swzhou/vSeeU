@@ -5,7 +5,7 @@ angular.module('vSeeUApp')
         $scope.menu = [
             {
                 'title': 'Home',
-                'link': '/'
+                'link': '/see/'
             }
         ];
 
@@ -20,6 +20,6 @@ angular.module('vSeeUApp')
         };
 
         $scope.isActive = function (route) {
-            return route === $location.path();
+            return new RegExp("^" + route).test($location.path());
         };
     });

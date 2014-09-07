@@ -1,0 +1,17 @@
+[
+    {
+        "property": "project",
+        "displayName": "Project",
+        "type": "text"
+    },
+    {
+        "property": "time",
+        "displayName": "Build Time",
+        "type": "datetime"
+    },
+    {
+        "property": "coverage",
+        "displayName": "Coverage",
+        "type": "number"
+    }
+]

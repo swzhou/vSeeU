@@ -1,0 +1,92 @@
+[
+    {
+        "project": "frontend application",
+        "time": "2014-06-02T09:30:26",
+        "coverage": 0.5321
+    },
+    {
+        "project": "frontend application",
+        "time": "2014-06-04T09:30:26",
+        "coverage": 0.5521
+    },
+    {
+        "project": "frontend application",
+        "time": "2014-06-09T09:30:26",
+        "coverage": 0.5121
+    },
+    {
+        "project": "frontend application",
+        "time": "2014-07-09T09:30:26",
+        "coverage": 0.4211
+    },
+    {
+        "project": "frontend application",
+        "time": "2014-07-15T09:30:26",
+        "coverage": 0.4712
+    },
+    {
+        "project": "frontend application",
+        "time": "2014-07-22T09:30:26",
+        "coverage": 0.4712
+    },
+    {
+        "project": "frontend application",
+        "time": "2014-08-01T09:30:26",
+        "coverage": 0.6612
+    },
+    {
+        "project": "frontend application",
+        "time": "2014-08-09T09:30:26",
+        "coverage": 0.7212
+    },
+    {
+        "project": "frontend application",
+        "time": "2014-09-05T09:30:26",
+        "coverage": 0.7533
+    },
+    {
+        "project": "backend application",
+        "time": "2014-05-02T09:30:26",
+        "coverage": 0.5321
+    },
+    {
+        "project": "backend application",
+        "time": "2014-05-04T09:30:26",
+        "coverage": 0.5521
+    },
+    {
+        "project": "backend application",
+        "time": "2014-06-09T09:30:26",
+        "coverage": 0.5121
+    },
+    {
+        "project": "backend application",
+        "time": "2014-06-11T09:30:26",
+        "coverage": 0.4211
+    },
+    {
+        "project": "backend application",
+        "time": "2014-07-15T09:30:26",
+        "coverage": 0.4120
+    },
+    {
+        "project": "backend application",
+        "time": "2014-08-22T09:30:26",
+        "coverage": 0.5812
+    },
+    {
+        "project": "backend application",
+        "time": "2014-09-01T09:30:26",
+        "coverage": 0.6512
+    },
+    {
+        "project": "backend application",
+        "time": "2014-09-09T09:30:26",
+        "coverage": 0.7912
+    },
+    {
+        "project": "backend application",
+        "time": "2014-03-05T09:30:26",
+        "coverage": 0.8033
+    }
+]

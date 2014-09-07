@@ -1,0 +1,23 @@
+[
+    {
+        "property": "pipeline",
+        "displayName": "Pipeline",
+        "type": "text"
+    },
+    {
+        "property": "time",
+        "displayName": "Build Time",
+        "type": "datetime"
+    },
+    {
+        "property": "duration",
+        "displayName": "Duration (s)",
+        "type": "number"
+    },
+    {
+        "property": "status",
+        "displayName": "Status",
+        "type": "select",
+        "options": ["pass", "fail"]
+    }
+]

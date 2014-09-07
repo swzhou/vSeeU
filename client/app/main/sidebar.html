@@ -1,0 +1,7 @@
+<div class="col-sm-3 col-md-2 sidebar">
+    <ul class="nav nav-sidebar">
+        <li ng-repeat="vsee in vsees" ng-class="isActive(vsee)">
+            <a ng-href="/see/{{vsee.index}}"><span ng-bind="vsee.name"></span></a>
+        </li>
+    </ul>
+</div>

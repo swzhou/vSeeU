@@ -1,0 +1,23 @@
+[
+    {
+        "id": "green-build",
+        "name": "Green Build",
+        "data": "data/json/builds.json",
+        "definition": "data/json/build-definition.json",
+        "calculator": "data/calculators/green-build.js"
+    },
+    {
+        "id": "build-time",
+        "name": "Build Time",
+        "data": "data/json/builds.json",
+        "definition": "data/json/build-definition.json",
+        "calculator": "data/calculators/build-time.js"
+    },
+    {
+        "id": "test-coverage",
+        "name": "Test Coverage",
+        "data": "data/json/coverages.json",
+        "definition": "data/json/coverage-definition.json",
+        "calculator": "data/calculators/coverage.js"
+    }
+]

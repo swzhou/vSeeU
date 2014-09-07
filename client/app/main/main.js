@@ -5,10 +5,24 @@ angular.module('vSeeUApp')
         $routeProvider
             .when('/see/:index', {
                 templateUrl: 'app/main/main.html',
-                controller: 'MainCtrl'
+                controller: 'MainCtrl',
+                resolve: {
+                    vsees: function ($http) {
+                        return $http.get('/api/vsees').then(function (response) {
+                            return response.data;
+                        });
+                    }
+                }
             })
             .when('/', {
                 templateUrl: 'app/main/main.html',
-                controller: 'MainCtrl'
+                controller: 'MainCtrl',
+                resolve: {
+                    vsees: function ($http) {
+                        return $http.get('/api/vsees').then(function (response) {
+                            return response.data;
+                        });
+                    }
+                }
             });
     });

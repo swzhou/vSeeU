@@ -136,3 +136,12 @@ body {
     display: inline-block;
     border-radius: 50%;
 }
+
+.datetime-input {
+    width: 49%;
+    display: inline;
+}
+
+div.chart-type {
+    margin-bottom: 50px;
+}

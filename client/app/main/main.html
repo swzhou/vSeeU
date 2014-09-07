@@ -4,8 +4,24 @@
     <div class="row">
         <div ng-include="'app/main/sidebar.html'"></div>
         <div class="col-sm-9 col-md-10 col-sm-offset-3 col-md-offset-2 main">
-            <div ng-include="'app/main/navbar.html'" ng-controller="MainNavbarCtrl"></div>
-            <div>content here</div>
+            <h1 class="page-header"><span ng-bind="getTitle()"></span></h1>
+            <ul class="nav nav-tabs">
+                <li ng-class="{active: shouldShowChart}">
+                    <a href="" ng-click="showChart()">Chart</a>
+                </li>
+                <li ng-class="{active: !shouldShowChart}">
+                    <a href="" ng-click="showData()">Data</a>
+                </li>
+            </ul>
+            <div ng-switch="shouldShowChart">
+                <div ng-switch-when="true" class="row placeholders">
+                    <div ng-include="'app/main/see-chart.html'" ng-controller="ChartCtrl"></div>
+                </div>
+                <div ng-switch-when="false" class="row placeholders table-responsive">
+                    data
+                    <!--<!--<div ng-include="'views/index-data.html'"></div>-->-->
+                </div>
+            </div>
         </div>
     </div>
 </div>

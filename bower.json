@@ -17,7 +17,6 @@
         "angular-socket-io": "~0.6.0",
         "chartjs": "~1.0.1-beta.2",
         "moment": "~2.8.2",
-        "underscore": "~1.7.0",
         "angular-charts": "~0.2.5",
         "angles": "*",
         "angular-strap": "~2.0.5",

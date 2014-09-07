@@ -13,13 +13,12 @@
                     <a href="" ng-click="showData()">Data</a>
                 </li>
             </ul>
-            <div ng-switch="shouldShowChart">
+            <div ng-switch="shouldShowChart" ng-controller="ChartCtrl">
                 <div ng-switch-when="true" class="row placeholders">
-                    <div ng-include="'app/main/see-chart.html'" ng-controller="ChartCtrl"></div>
+                    <div ng-include="'app/main/see-chart.html'"></div>
                 </div>
                 <div ng-switch-when="false" class="row placeholders table-responsive">
-                    data
-                    <!--<!--<div ng-include="'views/index-data.html'"></div>-->-->
+                    <div ng-include="'app/main/chart-data.html'"></div>
                 </div>
             </div>
         </div>

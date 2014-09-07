@@ -11,8 +11,7 @@ angular.module('vSeeUApp', [
     'angles',
     'mgcrea.ngStrap',
     'colorpicker.module',
-    'btford.socket-io',
-    'ui.bootstrap'
+    'btford.socket-io'
 ])
     .config(function ($routeProvider, $locationProvider, $httpProvider) {
         $routeProvider

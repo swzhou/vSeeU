@@ -1,0 +1,32 @@
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+    <tr>
+        <th class="placeholders">#</th>
+        <th ng-repeat="definition in definitions" class="placeholders">
+            <span ng-bind="definition.displayName"></span>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="datum in data | orderBy:time">
+        <td>{{$index + 1}}</td>
+        <td ng-repeat="definition in definitions">
+            <div ng-switch="definition.type">
+                <input ng-switch-when="text" type="{{definition.type}}" ng-model="datum[definition.property]"
+                       class="form-control">
+                <input ng-switch-when="number" type="{{definition.type}}" ng-model="datum[definition.property]"
+                       class="form-control">
+                <select ng-switch-when="select" ng-options="value for value in definition.options"
+                        ng-model="datum[definition.property]" class="form-control">
+                </select>
+                <div ng-switch-when="datetime">
+                    <input type="text" class="datetime-input form-control" ng-model="datum[definition.property]"
+                           data-autoclose="1" placeholder="Date" bs-datepicker>
+                    <input type="text" class="datetime-input form-control" ng-model="datum[definition.property]"
+                           data-autoclose="1" placeholder="Time" bs-timepicker>
+                </div>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>

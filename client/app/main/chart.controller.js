@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('vSeeUApp')
-    .controller('ChartCtrl', ['$scope', 'CalculationService', 'ChartService', '$routeParams', '$http', 'ChartTypes',
-        function ($scope, CalculationService, ChartService, $routeParams, $http, ChartTypes) {
+    .controller('ChartCtrl', ['$scope', 'CalculationService', 'ChartService', '$routeParams', '$http', 'ChartTypes', 'ResourceService',
+        function ($scope, CalculationService, ChartService, $routeParams, $http, ChartTypes, ResourceService) {
             $scope.chartOptions = {};
             $scope.chartTypes = ChartTypes;
             $scope.chartOptions.chartType = ChartTypes[0];
@@ -10,11 +10,11 @@ angular.module('vSeeUApp')
                 return $routeParams.index === vsee.index;
             });
             if(!!currentVsee) {
-                $http.get(currentVsee.definition).then(function (response) {
-                    $scope.definitions = response.data;
+                ResourceService.get(currentVsee.definition).then(function (definitions) {
+                    $scope.definitions = definitions;
                 });
-                $http.get(currentVsee.data).then(function (response) {
-                    $scope.data = response.data;
+                ResourceService.get(currentVsee.data).then(function (data) {
+                    $scope.data = data;
                     $scope.options = {};
                     var months = moment.monthsShort();
                     $scope.$watch('data', function(data) {

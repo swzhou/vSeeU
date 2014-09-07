@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('vSeeUApp')
-    .service('CalculationService', ['$http', function ($http) {
+    .service('CalculationService', ['ResourceService', function (ResourceService) {
         return {
             calculate: function (calculatorUrl, data) {
-                return $http.get(calculatorUrl).then(function (response) {
-                    var calculator = eval('(' + response.data + ')');
+                return ResourceService.get(calculatorUrl).then(function (func) {
+                    var calculator = eval('(' + func + ')');
                     return calculator(data);
                 });
             }

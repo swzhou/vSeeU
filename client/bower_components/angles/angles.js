@@ -1,7 +1,7 @@
 var angles = angular.module("angles", []);
 
 angles.chart = function (type) {
-    return { 
+    return {
         restrict: "A",
         scope: {
             data: "=",
@@ -10,7 +10,7 @@ angles.chart = function (type) {
             width: "=",
             height: "=",
             resize: "=",
-            chart: "@",
+            chart: "=",
             segments: "@",
             responsive: "=",
             tooltip: "=",
@@ -20,14 +20,14 @@ angles.chart = function (type) {
             var ctx = $elem[0].getContext("2d");
             var autosize = false;
 
-			$scope.size = function () {
-	            if ($scope.width <= 0) {
-	                $elem.width($elem.parent().width());
-	                ctx.canvas.width = $elem.width();
-	            } else {
-	                ctx.canvas.width = $scope.width || ctx.canvas.width;
-	                autosize = true;
-	            }
+            $scope.size = function () {
+                if ($scope.width <= 0) {
+                    $elem.width($elem.parent().width());
+                    ctx.canvas.width = $elem.width();
+                } else {
+                    ctx.canvas.width = $scope.width || ctx.canvas.width;
+                    autosize = true;
+                }
 
                 if($scope.height <= 0){
                     $elem.height($elem.parent().height());
@@ -36,23 +36,24 @@ angles.chart = function (type) {
                     ctx.canvas.height = $scope.height || ctx.canvas.height;
                     autosize = true;
                 }
-			}
+            }
 
-            $scope.$watch("data", function (newVal, oldVal) {
+            var onChartChange = function(newVal) {
                 if(chartCreated)
                     chartCreated.destroy();
-                    
+
                 // if data not defined, exit
-                if (!newVal) {
+                if (!newVal || !$scope.data || !$scope.chart) {
                     return;
                 }
                 if ($scope.chart) { type = $scope.chart; }
-                
+
                 if(autosize){
                     $scope.size();
                     chart = new Chart(ctx);
                 };
 
+                $scope.options = $scope.options || {};
                 if($scope.responsive || $scope.resize)
                     $scope.options.responsive = true;
 
@@ -63,7 +64,11 @@ angles.chart = function (type) {
                 chartCreated.update();
                 if($scope.legend)
                     angular.element($elem[0]).parent().after( chartCreated.generateLegend() );
-            }, true);
+            };
+
+            $scope.$watch("data", onChartChange, true);
+
+            $scope.$watch("chart", onChartChange, true);
 
             $scope.$watch("tooltip", function (newVal, oldVal) {
                 if (chartCreated)

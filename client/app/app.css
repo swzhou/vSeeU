@@ -1,4 +1,3 @@
-
 /**
  * Bootstrap Fonts
  */
@@ -30,6 +29,9 @@
 /**
  * App-wide Styles
  */
+body {
+    padding-top: 50px;
+}
 
 .browsehappy {
     margin: 0.2em 0;

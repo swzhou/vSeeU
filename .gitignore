@@ -3,5 +3,5 @@ public
 .tmp
 .idea
 db
-dist
+/dist
 /server/config/local.env.js

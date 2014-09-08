@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('vSeeUApp')
-    .controller('VseesCtrl', ['$scope', '$http', 'socket', 'User',
-        function ($scope, $http, socket, User) {
+    .controller('VseesCtrl', ['$scope', '$http', 'socket', 'User', '$alert',
+        function ($scope, $http, socket, User, $alert) {
             $scope.vsees = [];
             $scope.newVsee = {};
 
@@ -12,11 +12,15 @@ angular.module('vSeeUApp')
             });
 
             $scope.save = function (vsee) {
-                $http.put('/api/vsees/' + vsee._id, vsee);
+                $http.put('/api/vsees/' + vsee._id, vsee).then(function() {
+                    $alert({title: 'VSee updated.', animation: 'am-fade-and-slide-top', duration: 5, type: 'info'});
+                });
             };
 
             $scope.remove = function (vsee) {
-                $http.delete('/api/vsees/' + vsee._id);
+                $http.delete('/api/vsees/' + vsee._id).then(function() {
+                    $alert({title: 'VSee deleted.', animation: 'am-fade-and-slide-top', duration: 5, type: 'danger'});
+                });
             };
 
             $scope.add = function () {
@@ -27,6 +31,7 @@ angular.module('vSeeUApp')
                     var newVsee = _.extend($scope.newVsee, {owner: currentUser._id});
                     $http.post('/api/vsees', newVsee).then(function () {
                         $scope.newVsee = {};
+                        $alert({title: 'VSee created.', animation: 'am-fade-and-slide-top', duration: 5, type: 'success'});
                     });
                 });
             };
